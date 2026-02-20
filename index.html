@@ -37,7 +37,6 @@
             background: var(--ivory);
             z-index: 10;
         }
-
         /* ──────────────── SMALLER MULTI-COLORED FALLING PETALS ──────────────── */
         .petals {
             position: fixed;
@@ -46,7 +45,6 @@
             overflow: hidden;
             z-index: 999;
         }
-
         .petal {
             position: absolute;
             top: -20vh;
@@ -55,13 +53,11 @@
             animation: fall linear infinite;
             box-shadow: 0 0 6px rgba(0,0,0,0.15);
         }
-
         @keyframes fall {
-            0%   { transform: translateY(-20vh) rotate(0deg);   opacity: 0.95; }
-            100% { transform: translateY(140vh) rotate(1440deg); opacity: 0;   }
+            0% { transform: translateY(-20vh) rotate(0deg); opacity: 0.95; }
+            100% { transform: translateY(140vh) rotate(1440deg); opacity: 0; }
         }
         /* ──────────────────────────────────────────────────────────────── */
-
         .bg-pattern {
             background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
             background-size: 30px 30px;
@@ -72,7 +68,7 @@
             margin-bottom: 1rem;
         }
         .initials { font-size: 5rem; letter-spacing: 10px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
-       
+      
         h2 { font-size: 2.5rem; color: var(--gold); }
         h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 3px; color: var(--vermillion); margin-top: 10px; }
         p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; margin: 10px auto; color: var(--text-dark); }
@@ -153,12 +149,18 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
+        /* Added Ganesha icon styling */
+        .ganesha-icon {
+            width: 85px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.6));
+        }
     </style>
 </head>
 <body>
-
     <div class="petals"></div>
-
     <audio id="bg-music" loop>
         <source src="website.mp3" type="audio/mpeg">
     </audio>
@@ -167,7 +169,9 @@
         <div id="music-icon" style="color: var(--vermillion); font-size: 1.2rem;">♪</div>
     </div>
 
+    <!-- Updated Slide 1 with Ganesha icon -->
     <section id="slide1">
+        <img src="ganesha.png" alt="Lord Ganesha" class="ganesha-icon">
         <div class="initials">D & M</div>
         <h3>The Beginning of Forever</h3>
         <div class="date-box">MARCH 11, 2026</div>
@@ -181,7 +185,6 @@
         <div class="divider"></div>
         <p><em>Where heritage meets destiny, two souls intertwine <br> In the royal heart of Gwalior, where the stars align.</em></p>
     </section>
-
     <section id="slide3">
         <span class="sanskrit">|| MANGALAM ||</span>
         <p class="lineage-title">With the blessings of our elders</p>
@@ -190,7 +193,6 @@
         <p>Son of Smt. Parvati Baroniya & Shri Phool Singh Baroniya</p>
         <p>The Baroniya Family</p>
     </section>
-
     <section id="slide4">
         <span class="sanskrit">|| SAUBHAGYA ||</span>
         <p class="lineage-title">With the blessings of our elders</p>
@@ -199,7 +201,6 @@
         <p>Daughter of Smt. Poonam Rathi & Shri Sanjay Rathi</p>
         <p>The Rathi Family</p>
     </section>
-
     <section id="slide5" class="bg-pattern">
         <span class="sanskrit">|| UTSAV ||</span>
         <h2>March 9th, 2026</h2>
@@ -218,7 +219,6 @@
             </div>
         </div>
     </section>
-
     <section id="slide6" style="background-color: #FFF9E6;">
         <span class="sanskrit">|| PAVITRA ||</span>
         <h2>March 10th, 2026</h2>
@@ -230,12 +230,11 @@
             <div class="dress-code" style="color: #B8860B;">Dress: All Shades of Yellow</div>
         </div>
     </section>
-
     <section id="slide7">
         <span class="sanskrit">|| AGNI SAKSHI ||</span>
         <h2>The Grand Finale</h2>
         <h1 style="font-size: 2rem;">Wednesday, March 11th</h1>
-       
+      
         <div style="text-align: left; margin: 20px 0;">
             <p><strong>4:00 PM:</strong> Barat</p>
             <p><strong>7:00 PM:</strong> Reception</p>
@@ -256,7 +255,6 @@
         const audioBtn = document.getElementById('audio-container');
         const musicStatus = document.getElementById('music-status');
         let isPlaying = false;
-
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
@@ -267,7 +265,6 @@
             }
             isPlaying = !isPlaying;
         }
-
         const startMusicOnInteraction = () => {
             if (!isPlaying) {
                 toggleMusic();
@@ -275,15 +272,12 @@
                 document.removeEventListener('scroll', startMusicOnInteraction);
             }
         };
-
         document.addEventListener('click', startMusicOnInteraction);
         document.addEventListener('scroll', startMusicOnInteraction);
-
         audioBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleMusic();
         });
-
         // Section fade-in animation
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -294,22 +288,17 @@
             });
         }, { threshold: 0.3 });
         sections.forEach(section => observer.observe(section));
-
         // ──────────────── SMALLER PETALS ────────────────
         function createPetal() {
             const petal = document.createElement("div");
             petal.classList.add("petal");
-
             // Smaller size
-            const size = 8 + Math.random() * 6;  // → 8–14 px
-            petal.style.width  = size + "px";
+            const size = 8 + Math.random() * 6; // → 8–14 px
+            petal.style.width = size + "px";
             petal.style.height = size + "px";
-
             petal.style.left = Math.random() * 100 + "vw";
-
             // Slower & longer fall for small delicate look
-            petal.style.animationDuration = (12 + Math.random() * 12) + "s";  // 12–24 seconds
-
+            petal.style.animationDuration = (12 + Math.random() * 12) + "s"; // 12–24 seconds
             const colors = [
                 {main: "#D4AF37", light: "#FFEB3B"},
                 {main: "#F4C2C2", light: "#FFD1DC"},
@@ -318,23 +307,17 @@
                 {main: "#FDF5E6", light: "#FFF8E7"}
             ];
             const c = colors[Math.floor(Math.random() * colors.length)];
-
             petal.style.background = `radial-gradient(circle at 30% 30%, ${c.light}, ${c.main} 70%)`;
-
             document.querySelector(".petals").appendChild(petal);
-
             setTimeout(() => petal.remove(), 30000);
         }
-
         // Initial burst (smaller amount, spaced out)
         for (let i = 0; i < 12; i++) {
             setTimeout(createPetal, i * 200);
         }
-
         // Normal rate – less frequent for smaller petals
         setInterval(createPetal, 800);
         // ────────────────────────────────────────────────
     </script>
 </body>
 </html>
-
