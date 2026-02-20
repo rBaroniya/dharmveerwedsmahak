@@ -1,160 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharmveer & Mahak | The Royal Union</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --ivory: #FFFDF5;
-            --vermillion: #7E191B;
-            --text-dark: #2C2C2C;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharmveer & Mahak | The Royal Union</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: var(--ivory);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            scroll-snap-type: y mandatory;
-        }
+<style>
+:root {
+    --gold:#D4AF37;
+    --ivory:#FFFDF5;
+    --vermillion:#7E191B;
+    --text-dark:#2C2C2C;
+}
 
-        section {
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            scroll-snap-align: start;
-            position: relative;
-            border: 15px solid var(--ivory);
-            outline: 2px solid var(--gold);
-            outline-offset: -20px;
-            background: var(--ivory);
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        .bg-pattern {
-            background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-        }
+body{
+    font-family:'Playfair Display',serif;
+    background-color:var(--ivory);
+    color:var(--text-dark);
+    overflow-x:hidden;
+    scroll-snap-type:y mandatory;
+}
 
-        h1, h2, .initials {
-            font-family: 'Cinzel Decorative', cursive;
-            color: var(--vermillion);
-            margin-bottom: 1rem;
-        }
+section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:2rem;
+    scroll-snap-align:start;
+    border:15px solid var(--ivory);
+    outline:2px solid var(--gold);
+    outline-offset:-20px;
+}
 
-        .initials {
-            font-size: 5rem;
-            letter-spacing: 10px;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
-        }
+.bg-pattern{
+    background-image:radial-gradient(var(--gold)0.5px,transparent 0.5px);
+    background-size:30px 30px;
+}
 
-        h2 { font-size: 2.5rem; color: var(--gold); }
+h1,h2,.initials{
+    font-family:'Cinzel Decorative',cursive;
+    color:var(--vermillion);
+    margin-bottom:1rem;
+}
 
-        h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            color: var(--vermillion);
-            margin-top: 10px;
-        }
+.initials{
+    font-size:5rem;
+    letter-spacing:10px;
+    border-bottom:2px solid var(--gold);
+    padding-bottom:10px;
+}
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 10px auto;
-            color: var(--text-dark);
-        }
+h2{font-size:2.5rem;color:var(--gold);}
 
-        .date-box {
-            border: 1px solid var(--gold);
-            padding: 10px 30px;
-            display: inline-block;
-            margin-top: 20px;
-            font-family: 'Cinzel', serif;
-        }
+h3{
+    font-family:'Cinzel',serif;
+    font-size:1.2rem;
+    letter-spacing:3px;
+    color:var(--vermillion);
+}
 
-        .divider {
-            width: 100px;
-            height: 2px;
-            background: var(--gold);
-            margin: 20px auto;
-        }
+p{
+    font-size:1.2rem;
+    line-height:1.6;
+    max-width:600px;
+    margin:10px auto;
+}
 
-        .btn {
-            background: var(--vermillion);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            display: inline-block;
-            transition: 0.3s;
-            border: 1px solid var(--gold);
-        }
+.date-box{
+    border:1px solid var(--gold);
+    padding:10px 30px;
+    margin-top:20px;
+    font-family:'Cinzel',serif;
+}
 
-        .btn:hover {
-            background: var(--gold);
-            color: var(--vermillion);
-        }
+.divider{
+    width:100px;
+    height:2px;
+    background:var(--gold);
+    margin:20px auto;
+}
 
-        .lineage-title {
-            font-style: italic;
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
+.event-card{
+    background:white;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    border-top:4px solid var(--gold);
+    margin:10px;
+    width:300px;
+}
 
-        .event-card {
-            background: white;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--gold);
-            margin: 10px;
-            width: 300px;
-        }
+.dress-code{
+    font-size:0.9rem;
+    color:var(--vermillion);
+    font-weight:bold;
+    margin-top:10px;
+    text-transform:uppercase;
+}
 
-        .dress-code {
-            font-size: 0.9rem;
-            color: var(--vermillion);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
+.sanskrit{
+    font-family:'Cinzel',serif;
+    font-size:1.1rem;
+    color:var(--gold);
+    letter-spacing:5px;
+    margin-bottom:10px;
+}
 
-        .sanskrit {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: var(--gold);
-            letter-spacing: 5px;
-            display: block;
-            margin-bottom: 10px;
-        }
+section>*{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 1s ease-out;
+}
 
-        section > * {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
-        }
+section.active>*{
+    opacity:1;
+    transform:translateY(0);
+}
 
-        section.active > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+.tap-note{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:0.8rem;
+    font-family:'Cinzel',serif;
+    color:var(--vermillion);
+    opacity:0.8;
+}
+</style>
 </head>
+
 <body>
 
 <!-- Background Music -->
@@ -261,24 +242,6 @@
 
         sections.forEach(section => observer.observe(section));
     </script>
-<script>
-// Start music on first click (browser safe)
-document.addEventListener("click", function() {
-    const music = document.getElementById("bg-music");
-    music.play();
-    document.querySelector(".tap-note").style.display="none";
-},{once:true});
 
-// Scroll animation
-const sections=document.querySelectorAll("section");
-const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("active");
-        }
-    });
-},{threshold:0.3});
-sections.forEach(section=>observer.observe(section));
-</script>
 </body>
 </html>
