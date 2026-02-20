@@ -1,263 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharmveer & Mahak | The Royal Union</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --ivory: #FFFDF5;
-            --vermillion: #7E191B;
-            --text-dark: #2C2C2C;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharmveer & Mahak | The Royal Union</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: var(--ivory);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            scroll-snap-type: y mandatory;
-        }
+<style>
+:root {
+    --gold:#D4AF37;
+    --ivory:#FFFDF5;
+    --vermillion:#7E191B;
+    --text-dark:#2C2C2C;
+}
 
-        section {
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            scroll-snap-align: start;
-            position: relative;
-            border: 15px solid var(--ivory);
-            outline: 2px solid var(--gold);
-            outline-offset: -20px;
-            background: var(--ivory);
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        .bg-pattern {
-            background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-        }
+body{
+    font-family:'Playfair Display',serif;
+    background-color:var(--ivory);
+    color:var(--text-dark);
+    overflow-x:hidden;
+    scroll-snap-type:y mandatory;
+}
 
-        h1, h2, .initials {
-            font-family: 'Cinzel Decorative', cursive;
-            color: var(--vermillion);
-            margin-bottom: 1rem;
-        }
+section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:2rem;
+    scroll-snap-align:start;
+    border:15px solid var(--ivory);
+    outline:2px solid var(--gold);
+    outline-offset:-20px;
+}
 
-        .initials {
-            font-size: 5rem;
-            letter-spacing: 10px;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
-        }
+.bg-pattern{
+    background-image:radial-gradient(var(--gold)0.5px,transparent 0.5px);
+    background-size:30px 30px;
+}
 
-        h2 { font-size: 2.5rem; color: var(--gold); }
+h1,h2,.initials{
+    font-family:'Cinzel Decorative',cursive;
+    color:var(--vermillion);
+    margin-bottom:1rem;
+}
 
-        h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            color: var(--vermillion);
-            margin-top: 10px;
-        }
+.initials{
+    font-size:5rem;
+    letter-spacing:10px;
+    border-bottom:2px solid var(--gold);
+    padding-bottom:10px;
+}
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 10px auto;
-            color: var(--text-dark);
-        }
+h2{font-size:2.5rem;color:var(--gold);}
 
-        .date-box {
-            border: 1px solid var(--gold);
-            padding: 10px 30px;
-            display: inline-block;
-            margin-top: 20px;
-            font-family: 'Cinzel', serif;
-        }
+h3{
+    font-family:'Cinzel',serif;
+    font-size:1.2rem;
+    letter-spacing:3px;
+    color:var(--vermillion);
+}
 
-        .divider {
-            width: 100px;
-            height: 2px;
-            background: var(--gold);
-            margin: 20px auto;
-        }
+p{
+    font-size:1.2rem;
+    line-height:1.6;
+    max-width:600px;
+    margin:10px auto;
+}
 
-        .btn {
-            background: var(--vermillion);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            display: inline-block;
-            transition: 0.3s;
-            border: 1px solid var(--gold);
-        }
+.date-box{
+    border:1px solid var(--gold);
+    padding:10px 30px;
+    margin-top:20px;
+    font-family:'Cinzel',serif;
+}
 
-        .btn:hover {
-            background: var(--gold);
-            color: var(--vermillion);
-        }
+.divider{
+    width:100px;
+    height:2px;
+    background:var(--gold);
+    margin:20px auto;
+}
 
-        .lineage-title {
-            font-style: italic;
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
+.event-card{
+    background:white;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    border-top:4px solid var(--gold);
+    margin:10px;
+    width:300px;
+}
 
-        .event-card {
-            background: white;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--gold);
-            margin: 10px;
-            width: 300px;
-        }
+.dress-code{
+    font-size:0.9rem;
+    color:var(--vermillion);
+    font-weight:bold;
+    margin-top:10px;
+    text-transform:uppercase;
+}
 
-        .dress-code {
-            font-size: 0.9rem;
-            color: var(--vermillion);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
+.sanskrit{
+    font-family:'Cinzel',serif;
+    font-size:1.1rem;
+    color:var(--gold);
+    letter-spacing:5px;
+    margin-bottom:10px;
+}
 
-        .sanskrit {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: var(--gold);
-            letter-spacing: 5px;
-            display: block;
-            margin-bottom: 10px;
-        }
+section>*{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 1s ease-out;
+}
 
-        section > * {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
-        }
+section.active>*{
+    opacity:1;
+    transform:translateY(0);
+}
 
-        section.active > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+.tap-note{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:0.8rem;
+    font-family:'Cinzel',serif;
+    color:var(--vermillion);
+    opacity:0.8;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- AUTOPLAY MUSIC -->
-    <audio autoplay loop playsinline>
-        <source src="website.mp3" type="audio/mpeg">
-    </audio>
+<!-- Background Music -->
+<audio id="bg-music" loop>
+    <source src="website.mp3" type="audio/mpeg">
+</audio>
 
-    <section id="slide1">
-        <div class="initials">D & M</div>
-        <h3>The Beginning of Forever</h3>
-        <div class="date-box">MARCH 11, 2026</div>
-        <p style="margin-top: 20px; font-family: 'Cinzel'; font-size: 0.8rem;">Scroll to begin the journey</p>
-    </section>
+<div class="tap-note">Tap anywhere to start music</div>
 
-    <section id="slide2" class="bg-pattern">
-        <span class="sanskrit">|| SHUBH VIVAH ||</span>
-        <h2>The Union</h2>
-        <h1>Dharmveer & Mahak</h1>
-        <div class="divider"></div>
-        <p><em>Where heritage meets destiny, two souls intertwine <br> In the royal heart of Gwalior, where the stars align.</em></p>
-    </section>
+<section>
+    <div class="initials">D & M</div>
+    <h3>The Beginning of Forever</h3>
+    <div class="date-box">MARCH 11, 2026</div>
+</section>
 
-    <section id="slide3">
-        <span class="sanskrit">|| MANGALAM ||</span>
-        <p class="lineage-title">With the blessings of our elders</p>
-        <h2>Dharmveer</h2>
-        <div class="divider"></div>
-        <p>Son of Smt. Parvati Baroniya & Shri Phool Singh Baroniya</p>
-        <p>The Baroniya Family</p>
-    </section>
+<section class="bg-pattern">
+    <span class="sanskrit">|| SHUBH VIVAH ||</span>
+    <h2>The Union</h2>
+    <h1>Dharmveer & Mahak</h1>
+    <div class="divider"></div>
+    <p><em>Where heritage meets destiny, two souls unite in eternal celebration.</em></p>
+</section>
 
-    <section id="slide4">
-        <span class="sanskrit">|| SAUBHAGYA ||</span>
-        <p class="lineage-title">With the blessings of our elders</p>
-        <h2>Mahak</h2>
-        <div class="divider"></div>
-        <p>Daughter of Smt. Poonam Rathi & Shri Sanjay Rathi</p>
-        <p>The Rathi Family</p>
-    </section>
+<section>
+    <span class="sanskrit">|| MANGALAM ||</span>
+    <h2>Dharmveer</h2>
+    <div class="divider"></div>
+    <p>Son of Smt. Parvati Baroniya & Shri Phool Singh Baroniya</p>
+</section>
 
-    <section id="slide5" class="bg-pattern">
-        <span class="sanskrit">|| UTSAV ||</span>
-        <h2>March 9th, 2026</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <div class="event-card">
-                <h3>Mehandi</h3>
-                <p>10:00 AM</p>
-                <p><em>A Morning of Henna and Happiness</em></p>
-                <div class="dress-code">Dress: Vibrant Florals</div>
-            </div>
-            <div class="event-card">
-                <h3>Mata Poojan</h3>
-                <p>04:00 PM</p>
-                <p><em>Seeking Divine Blessings</em></p>
-                <div class="dress-code">Dress: Traditional Formals</div>
-            </div>
+<section>
+    <span class="sanskrit">|| SAUBHAGYA ||</span>
+    <h2>Mahak</h2>
+    <div class="divider"></div>
+    <p>Daughter of Smt. Poonam Rathi & Shri Sanjay Rathi</p>
+</section>
+
+<section class="bg-pattern">
+    <h2>March 9th, 2026</h2>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;">
+        <div class="event-card">
+            <h3>Mehandi</h3>
+            <p>10:00 AM</p>
+            <div class="dress-code">Vibrant Florals</div>
         </div>
-    </section>
-
-    <section id="slide6" style="background-color: #FFF9E6;">
-        <span class="sanskrit">|| PAVITRA ||</span>
-        <h2>March 10th, 2026</h2>
-        <div class="event-card" style="width: 450px;">
-            <h3>Haldi & Mandap</h3>
-            <p>10:00 AM onwards</p>
-            <div class="divider"></div>
-            <p>Experience the Golden Glow as we prepare for the sacred vows in a shower of turmeric and love.</p>
-            <div class="dress-code" style="color: #B8860B;">Dress: All Shades of Yellow</div>
+        <div class="event-card">
+            <h3>Mata Poojan</h3>
+            <p>04:00 PM</p>
+            <div class="dress-code">Traditional Formals</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="slide7">
-        <span class="sanskrit">|| AGNI SAKSHI ||</span>
-        <h2>The Grand Finale</h2>
-        <h1 style="font-size: 2rem;">Wednesday, March 11th</h1>
+<section>
+    <h2>March 11th, 2026</h2>
+    <div class="divider"></div>
+    <p>4:00 PM Barat</p>
+    <p>7:00 PM Reception</p>
+    <p>9:00 PM Phere</p>
+    <div class="divider"></div>
+    <p><strong>Venue:</strong> Rambagh Resort, Gwalior</p>
+</section>
 
-        <div style="text-align: left; margin: 20px 0;">
-            <p><strong>4:00 PM:</strong> Barat</p>
-            <p><strong>7:00 PM:</strong> Reception</p>
-            <p><strong>9:00 PM:</strong> Phere</p>
-        </div>
+<script>
+// Start music on first click (browser safe)
+document.addEventListener("click", function() {
+    const music = document.getElementById("bg-music");
+    music.play();
+    document.querySelector(".tap-note").style.display="none";
+},{once:true});
 
-        <div class="divider"></div>
-        <p><strong>Venue:</strong> Rambagh Resort, MIG-154,<br>Madhav Nagar, Gwalior.</p>
-        <div class="dress-code">Dress: Royal Traditional / Formal</div>
-
-        <div>
-            <a href="https://maps.google.com" target="_blank" class="btn">VIEW ON MAP</a>
-            <a href="#" class="btn" style="background: transparent; color: var(--vermillion); border: 1px solid var(--vermillion); margin-left: 10px;">RSVP NOW</a>
-        </div>
-    </section>
-
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        sections.forEach(section => observer.observe(section));
-    </script>
+// Scroll animation
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{threshold:0.3});
+sections.forEach(section=>observer.observe(section));
+</script>
 
 </body>
 </html>
