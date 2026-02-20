@@ -1,149 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dharmveer & Mahak | The Royal Union</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharmveer & Mahak | The Royal Union</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --ivory: #FFFDF5;
+            --vermillion: #7E191B;
+            --text-dark: #2C2C2C;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<style>
-:root {
-    --gold:#D4AF37;
-    --ivory:#FFFDF5;
-    --vermillion:#7E191B;
-    --text-dark:#2C2C2C;
-}
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--ivory);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+            border: 15px solid var(--ivory);
+            outline: 2px solid var(--gold);
+            outline-offset: -20px;
+            background: var(--ivory);
+        }
 
-body{
-    font-family:'Playfair Display',serif;
-    background-color:var(--ivory);
-    color:var(--text-dark);
-    overflow-x:hidden;
-    scroll-snap-type:y mandatory;
-}
+        .bg-pattern {
+            background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+        }
 
-section{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:2rem;
-    scroll-snap-align:start;
-    border:15px solid var(--ivory);
-    outline:2px solid var(--gold);
-    outline-offset:-20px;
-}
+        h1, h2, .initials {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--vermillion);
+            margin-bottom: 1rem;
+        }
 
-.bg-pattern{
-    background-image:radial-gradient(var(--gold)0.5px,transparent 0.5px);
-    background-size:30px 30px;
-}
+        .initials {
+            font-size: 5rem;
+            letter-spacing: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
 
-h1,h2,.initials{
-    font-family:'Cinzel Decorative',cursive;
-    color:var(--vermillion);
-    margin-bottom:1rem;
-}
+        h2 { font-size: 2.5rem; color: var(--gold); }
 
-.initials{
-    font-size:5rem;
-    letter-spacing:10px;
-    border-bottom:2px solid var(--gold);
-    padding-bottom:10px;
-}
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: var(--vermillion);
+            margin-top: 10px;
+        }
 
-h2{font-size:2.5rem;color:var(--gold);}
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 10px auto;
+            color: var(--text-dark);
+        }
 
-h3{
-    font-family:'Cinzel',serif;
-    font-size:1.2rem;
-    letter-spacing:3px;
-    color:var(--vermillion);
-}
+        .date-box {
+            border: 1px solid var(--gold);
+            padding: 10px 30px;
+            display: inline-block;
+            margin-top: 20px;
+            font-family: 'Cinzel', serif;
+        }
 
-p{
-    font-size:1.2rem;
-    line-height:1.6;
-    max-width:600px;
-    margin:10px auto;
-}
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
 
-.date-box{
-    border:1px solid var(--gold);
-    padding:10px 30px;
-    margin-top:20px;
-    font-family:'Cinzel',serif;
-}
+        .btn {
+            background: var(--vermillion);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            display: inline-block;
+            transition: 0.3s;
+            border: 1px solid var(--gold);
+        }
 
-.divider{
-    width:100px;
-    height:2px;
-    background:var(--gold);
-    margin:20px auto;
-}
+        .btn:hover {
+            background: var(--gold);
+            color: var(--vermillion);
+        }
 
-.event-card{
-    background:white;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    border-top:4px solid var(--gold);
-    margin:10px;
-    width:300px;
-}
+        .lineage-title {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
 
-.dress-code{
-    font-size:0.9rem;
-    color:var(--vermillion);
-    font-weight:bold;
-    margin-top:10px;
-    text-transform:uppercase;
-}
+        .event-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            margin: 10px;
+            width: 300px;
+        }
 
-.sanskrit{
-    font-family:'Cinzel',serif;
-    font-size:1.1rem;
-    color:var(--gold);
-    letter-spacing:5px;
-    margin-bottom:10px;
-}
+        .dress-code {
+            font-size: 0.9rem;
+            color: var(--vermillion);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
 
-section>*{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all 1s ease-out;
-}
+        .sanskrit {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-section.active>*{
-    opacity:1;
-    transform:translateY(0);
-}
+        section > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
 
-.tap-note{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    font-size:0.8rem;
-    font-family:'Cinzel',serif;
-    color:var(--vermillion);
-    opacity:0.8;
-}
-</style>
+        section.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Background Music -->
-<audio id="bg-music" loop>
-    <source src="website.mp3" type="audio/mpeg">
-</audio>
-
-<div class="tap-note">Tap anywhere to start music</div>
+    <!-- AUTOPLAY MUSIC -->
+    <audio autoplay loop playsinline>
+        <source src="website.mp3" type="audio/mpeg">
+    </audio>
 
     <section id="slide1">
         <div class="initials">D & M</div>
