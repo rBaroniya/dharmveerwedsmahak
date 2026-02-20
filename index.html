@@ -8,9 +8,9 @@
     <style>
         :root {
             --gold: #D4AF37;
-            --ivory: #FFFDF5;
+            --ivory: #FFF6D6;           /* lighter warm cream / very soft marigold-ivory */
             --vermillion: #7E191B;
-            --text-dark: #2C2C2C;
+            --text-dark: #222222;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -22,14 +22,13 @@
             position: relative;
         }
 
-        /* Soft golden glow background animation */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             background: 
-                radial-gradient(circle at 30% 30%, rgba(212,175,55,0.07), transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(126,25,27,0.04), transparent 60%);
+                radial-gradient(circle at 30% 30%, rgba(212,175,55,0.08), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(126,25,27,0.05), transparent 60%);
             animation: glowMove 18s ease-in-out infinite alternate;
             z-index: -1;
             pointer-events: none;
@@ -40,7 +39,6 @@
             100% { transform: translateY(15px)  scale(1.03); opacity: 0.95; }
         }
 
-        /* Envelope opening screen */
         #invitation-screen {
             position: fixed;
             inset: 0;
@@ -90,7 +88,7 @@
             margin-top: 25px;
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            color: var(--vermillion);
+            color: #4A0E0F;
             letter-spacing: 2px;
             font-style: italic;
         }
@@ -113,7 +111,6 @@
             z-index: 10;
         }
 
-        /* Falling petals */
         .petals {
             position: fixed;
             inset: 0;
@@ -159,13 +156,20 @@
       
         h2 { font-size: 2.5rem; color: var(--gold); }
         h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 3px; color: var(--vermillion); margin-top: 10px; }
-        p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; margin: 10px auto; color: var(--text-dark); }
+        p { 
+            font-size: 1.2rem; 
+            line-height: 1.6; 
+            max-width: 600px; 
+            margin: 10px auto; 
+            color: var(--text-dark);
+        }
         .date-box {
             border: 1px solid var(--gold);
             padding: 10px 30px;
             display: inline-block;
             margin-top: 20px;
             font-family: 'Cinzel', serif;
+            color: #3A1A1A;
         }
         .divider {
             width: 100px;
@@ -188,7 +192,12 @@
             z-index: 1000;
         }
         .btn:hover { background: var(--gold); color: var(--vermillion); }
-        .lineage-title { font-style: italic; color: #666; font-size: 1rem; margin-bottom: 5px; }
+        .lineage-title { 
+            font-style: italic; 
+            color: #3A3A3A; 
+            font-size: 1rem; 
+            margin-bottom: 5px; 
+        }
         .event-card {
             background: white;
             padding: 30px;
@@ -198,10 +207,11 @@
             width: 300px;
             position: relative;
             z-index: 1000;
+            color: #222222;
         }
         .dress-code {
             font-size: 0.9rem;
-            color: var(--vermillion);
+            color: #5A0F10;
             font-weight: bold;
             text-transform: uppercase;
             margin-top: 10px;
@@ -265,7 +275,7 @@
         }
         #countdown .label {
             font-size: 1rem;
-            color: var(--gold);
+            color: #4A4A4A;
             letter-spacing: 3px;
             margin-top: 10px;
             font-style: italic;
@@ -275,7 +285,6 @@
 </head>
 <body>
 
-    <!-- Step 1: Invitation / Envelope screen -->
     <div id="invitation-screen">
         <div class="envelope">
             <div class="flap"></div>
@@ -284,7 +293,6 @@
         </div>
     </div>
 
-    <!-- Step 2: All main content hidden at first -->
     <div id="main-content" style="display: none;">
 
         <div class="petals"></div>
@@ -321,7 +329,6 @@
             <p><em>Where heritage meets destiny, two souls intertwine <br> In the royal heart of Gwalior, where the stars align.</em></p>
         </section>
 
-        <!-- remaining sections unchanged -->
         <section id="slide3">
             <span class="sanskrit">|| MANGALAM ||</span>
             <p class="lineage-title">With the blessings of our elders</p>
@@ -330,6 +337,7 @@
             <p>Son of Smt. Parvati Baroniya & Shri Phool Singh Baroniya</p>
             <p>The Baroniya Family</p>
         </section>
+
         <section id="slide4">
             <span class="sanskrit">|| SAUBHAGYA ||</span>
             <p class="lineage-title">With the blessings of our elders</p>
@@ -338,6 +346,7 @@
             <p>Daughter of Smt. Poonam Rathi & Shri Sanjay Rathi</p>
             <p>The Rathi Family</p>
         </section>
+
         <section id="slide5" class="bg-pattern">
             <span class="sanskrit">|| UTSAV ||</span>
             <h2>March 9th, 2026</h2>
@@ -356,6 +365,7 @@
                 </div>
             </div>
         </section>
+
         <section id="slide6" style="background-color: #FFF9E6;">
             <span class="sanskrit">|| PAVITRA ||</span>
             <h2>March 10th, 2026</h2>
@@ -367,6 +377,7 @@
                 <div class="dress-code" style="color: #B8860B;">Dress: All Shades of Yellow</div>
             </div>
         </section>
+
         <section id="slide7">
             <span class="sanskrit">|| AGNI SAKSHI ||</span>
             <h2>The Grand Finale</h2>
@@ -385,10 +396,10 @@
             </div>
         </section>
 
-    </div> <!-- end of main-content -->
+    </div>
 
     <script>
-        // Envelope opening logic
+        // Envelope opening
         const envelope = document.querySelector(".envelope");
         const flap = document.querySelector(".flap");
         const invitationScreen = document.getElementById("invitation-screen");
@@ -408,7 +419,7 @@
             });
         }
 
-        // Music Logic
+        // Music
         const music = document.getElementById('bg-music');
         const audioBtn = document.getElementById('audio-container');
         const musicStatus = document.getElementById('music-status');
