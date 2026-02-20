@@ -12,9 +12,7 @@
             --vermillion: #7E191B;
             --text-dark: #2C2C2C;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Playfair Display', serif;
             background-color: var(--ivory);
@@ -22,7 +20,6 @@
             overflow-x: hidden;
             scroll-snap-type: y mandatory;
         }
-
         section {
             min-height: 100vh;
             width: 100%;
@@ -38,27 +35,47 @@
             outline: 2px solid var(--gold);
             outline-offset: -20px;
             background: var(--ivory);
+            z-index: 10;
         }
 
-        /* Slide Specific Backgrounds */
+        /* ──────────────── SMALLER MULTI-COLORED FALLING PETALS ──────────────── */
+        .petals {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .petal {
+            position: absolute;
+            top: -20vh;
+            border-radius: 50% 60% 40% 50% / 60% 50% 50% 40%;
+            opacity: 0.85;
+            animation: fall linear infinite;
+            box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fall {
+            0%   { transform: translateY(-20vh) rotate(0deg);   opacity: 0.95; }
+            100% { transform: translateY(140vh) rotate(1440deg); opacity: 0;   }
+        }
+        /* ──────────────────────────────────────────────────────────────── */
+
         .bg-pattern {
             background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
             background-size: 30px 30px;
         }
-
         h1, h2, .initials {
             font-family: 'Cinzel Decorative', cursive;
             color: var(--vermillion);
             margin-bottom: 1rem;
         }
-
         .initials { font-size: 5rem; letter-spacing: 10px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
-        
+       
         h2 { font-size: 2.5rem; color: var(--gold); }
         h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 3px; color: var(--vermillion); margin-top: 10px; }
-
         p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; margin: 10px auto; color: var(--text-dark); }
-
         .date-box {
             border: 1px solid var(--gold);
             padding: 10px 30px;
@@ -66,14 +83,12 @@
             margin-top: 20px;
             font-family: 'Cinzel', serif;
         }
-
         .divider {
             width: 100px;
             height: 2px;
             background: var(--gold);
             margin: 20px auto;
         }
-
         .btn {
             background: var(--vermillion);
             color: white;
@@ -85,12 +100,11 @@
             display: inline-block;
             transition: 0.3s;
             border: 1px solid var(--gold);
+            position: relative;
+            z-index: 1000;
         }
-
         .btn:hover { background: var(--gold); color: var(--vermillion); }
-
         .lineage-title { font-style: italic; color: #666; font-size: 1rem; margin-bottom: 5px; }
-
         .event-card {
             background: white;
             padding: 30px;
@@ -98,8 +112,9 @@
             border-top: 4px solid var(--gold);
             margin: 10px;
             width: 300px;
+            position: relative;
+            z-index: 1000;
         }
-
         .dress-code {
             font-size: 0.9rem;
             color: var(--vermillion);
@@ -107,7 +122,6 @@
             text-transform: uppercase;
             margin-top: 10px;
         }
-
         .sanskrit {
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
@@ -116,25 +130,20 @@
             display: block;
             margin-bottom: 10px;
         }
-
-        /* Animations */
         section > * {
             opacity: 0;
             transform: translateY(30px);
             transition: all 1s ease-out;
         }
-
         section.active > * {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Music Floating Button Style */
         #audio-container {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 1000;
+            z-index: 2000;
             display: flex;
             align-items: center;
             background: rgba(255, 253, 245, 0.9);
@@ -148,10 +157,11 @@
 </head>
 <body>
 
+    <div class="petals"></div>
+
     <audio id="bg-music" loop>
         <source src="website.mp3" type="audio/mpeg">
     </audio>
-
     <div id="audio-container">
         <div id="music-status" style="font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--vermillion); margin-right: 10px; letter-spacing: 1px; font-weight: bold;">PLAY MUSIC</div>
         <div id="music-icon" style="color: var(--vermillion); font-size: 1.2rem;">♪</div>
@@ -225,17 +235,15 @@
         <span class="sanskrit">|| AGNI SAKSHI ||</span>
         <h2>The Grand Finale</h2>
         <h1 style="font-size: 2rem;">Wednesday, March 11th</h1>
-        
+       
         <div style="text-align: left; margin: 20px 0;">
             <p><strong>4:00 PM:</strong> Barat</p>
             <p><strong>7:00 PM:</strong> Reception</p>
             <p><strong>9:00 PM:</strong> Phere</p>
         </div>
-
         <div class="divider"></div>
         <p><strong>Venue:</strong> Rambagh Resort, MIG-154,<br>Madhav Nagar, Gwalior.</p>
         <div class="dress-code">Dress: Royal Traditional / Formal</div>
-
         <div>
             <a href="https://maps.app.goo.gl/H9HfXgx4f2Tko6tv6" target="_blank" class="btn">VIEW ON MAP</a>
             <a href="https://wa.me/9752761195" class="btn" style="background: transparent; color: var(--vermillion); border: 1px solid var(--vermillion); margin-left: 10px;">RSVP NOW</a>
@@ -243,7 +251,7 @@
     </section>
 
     <script>
-        // --- Music Logic ---
+        // Music Logic
         const music = document.getElementById('bg-music');
         const audioBtn = document.getElementById('audio-container');
         const musicStatus = document.getElementById('music-status');
@@ -254,18 +262,15 @@
                 music.pause();
                 musicStatus.innerText = "MUSIC PAUSED";
             } else {
-                music.play();
+                music.play().catch(() => {});
                 musicStatus.innerText = "NOW PLAYING";
             }
             isPlaying = !isPlaying;
         }
 
-        // Browsers block audio until user interaction. 
-        // This starts the music on the first click or scroll.
         const startMusicOnInteraction = () => {
             if (!isPlaying) {
                 toggleMusic();
-                // Remove listeners once music starts
                 document.removeEventListener('click', startMusicOnInteraction);
                 document.removeEventListener('scroll', startMusicOnInteraction);
             }
@@ -274,13 +279,12 @@
         document.addEventListener('click', startMusicOnInteraction);
         document.addEventListener('scroll', startMusicOnInteraction);
 
-        // Manual button click
         audioBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleMusic();
         });
 
-        // --- Intersection Observer for Animations ---
+        // Section fade-in animation
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -289,13 +293,47 @@
                 }
             });
         }, { threshold: 0.3 });
-
         sections.forEach(section => observer.observe(section));
+
+        // ──────────────── SMALLER PETALS ────────────────
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+
+            // Smaller size
+            const size = 8 + Math.random() * 6;  // → 8–14 px
+            petal.style.width  = size + "px";
+            petal.style.height = size + "px";
+
+            petal.style.left = Math.random() * 100 + "vw";
+
+            // Slower & longer fall for small delicate look
+            petal.style.animationDuration = (12 + Math.random() * 12) + "s";  // 12–24 seconds
+
+            const colors = [
+                {main: "#D4AF37", light: "#FFEB3B"},
+                {main: "#F4C2C2", light: "#FFD1DC"},
+                {main: "#FF9933", light: "#FFC107"},
+                {main: "#A52A2A", light: "#C71585"},
+                {main: "#FDF5E6", light: "#FFF8E7"}
+            ];
+            const c = colors[Math.floor(Math.random() * colors.length)];
+
+            petal.style.background = `radial-gradient(circle at 30% 30%, ${c.light}, ${c.main} 70%)`;
+
+            document.querySelector(".petals").appendChild(petal);
+
+            setTimeout(() => petal.remove(), 30000);
+        }
+
+        // Initial burst (smaller amount, spaced out)
+        for (let i = 0; i < 12; i++) {
+            setTimeout(createPetal, i * 200);
+        }
+
+        // Normal rate – less frequent for smaller petals
+        setInterval(createPetal, 800);
+        // ────────────────────────────────────────────────
     </script>
 </body>
 </html>
-
-
-
-
-
