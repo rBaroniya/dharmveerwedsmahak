@@ -150,12 +150,40 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Added Ganesha icon styling */
+        /* Ganesha icon */
         .ganesha-icon {
             width: 85px;
             margin-bottom: 25px;
             opacity: 0.95;
             filter: drop-shadow(0 0 8px rgba(212,175,55,0.6));
+        }
+
+        /* Countdown styling */
+        #countdown {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 20px 40px;
+            border-radius: 12px;
+            border: 1px dashed var(--gold);
+            box-shadow: 0 4px 15px rgba(212,175,55,0.15);
+            margin: 30px auto;
+            max-width: 500px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--vermillion);
+            letter-spacing: 2px;
+        }
+        #countdown span {
+            font-weight: bold;
+            color: var(--vermillion);
+            margin: 0 4px;
+        }
+        #countdown .label {
+            font-size: 1rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-top: 10px;
+            font-style: italic;
+            display: block;
         }
     </style>
 </head>
@@ -169,12 +197,21 @@
         <div id="music-icon" style="color: var(--vermillion); font-size: 1.2rem;">♪</div>
     </div>
 
-    <!-- Updated Slide 1 with Ganesha icon -->
     <section id="slide1">
         <img src="ganesha.png" alt="Lord Ganesha" class="ganesha-icon">
         <div class="initials">D & M</div>
         <h3>The Beginning of Forever</h3>
         <div class="date-box">MARCH 11, 2026</div>
+        
+        <!-- Countdown Timer -->
+        <div id="countdown">
+            <span id="days">0</span>d 
+            <span id="hours">00</span>h 
+            <span id="minutes">00</span>m 
+            <span id="seconds">00</span>s
+            <span class="label">until Dharmveer & Mahak's Eternal Union</span>
+        </div>
+
         <p style="margin-top: 20px; font-family: 'Cinzel'; font-size: 0.8rem;">Scroll or Click to begin the journey</p>
     </section>
 
@@ -278,6 +315,7 @@
             e.stopPropagation();
             toggleMusic();
         });
+
         // Section fade-in animation
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -288,17 +326,46 @@
             });
         }, { threshold: 0.3 });
         sections.forEach(section => observer.observe(section));
+
+        // Wedding Countdown Timer
+        function startCountdown() {
+            const weddingDate = new Date("March 11, 2026 19:00:00").getTime();
+
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = 
+                        '<span style="font-size: 2rem; color: var(--gold);">The Royal Union has begun! 🪔✨</span>';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // Start countdown when page loads
+        window.addEventListener('load', startCountdown);
+
         // ──────────────── SMALLER PETALS ────────────────
         function createPetal() {
             const petal = document.createElement("div");
             petal.classList.add("petal");
-            // Smaller size
-            const size = 8 + Math.random() * 6; // → 8–14 px
+            const size = 8 + Math.random() * 6;
             petal.style.width = size + "px";
             petal.style.height = size + "px";
             petal.style.left = Math.random() * 100 + "vw";
-            // Slower & longer fall for small delicate look
-            petal.style.animationDuration = (12 + Math.random() * 12) + "s"; // 12–24 seconds
+            petal.style.animationDuration = (12 + Math.random() * 12) + "s";
             const colors = [
                 {main: "#D4AF37", light: "#FFEB3B"},
                 {main: "#F4C2C2", light: "#FFD1DC"},
@@ -311,11 +378,9 @@
             document.querySelector(".petals").appendChild(petal);
             setTimeout(() => petal.remove(), 30000);
         }
-        // Initial burst (smaller amount, spaced out)
         for (let i = 0; i < 12; i++) {
             setTimeout(createPetal, i * 200);
         }
-        // Normal rate – less frequent for smaller petals
         setInterval(createPetal, 800);
         // ────────────────────────────────────────────────
     </script>
